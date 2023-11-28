@@ -1,0 +1,92 @@
+/* QUESTION 1 */
+#container {
+    height: 98vh;
+    display: grid;
+    grid-template-rows: repeat(12, 1fr);
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 10px;
+}
+
+#container>div {
+    background-color: pink;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.head {
+    grid-column: 1/13;
+}
+
+.side {
+    grid-column: 1/3;
+    grid-row: 2/12;
+}
+
+.nav {
+    grid-column: 3/10;
+}
+
+.main {
+    grid-column: 3/10;
+    grid-row: 3/12;
+}
+
+.ads {
+    grid-column: 10/13;
+    grid-row: 2/12;
+}
+
+.foot {
+    grid-column: 1/13;
+}
+
+/* QUESTIOn 2 */
+@media (max-width: 720px) {
+    .nav {
+        grid-column: 1/13;
+        grid-row: 2/3;
+    }
+
+    .side {
+        grid-column: 1/4;
+        grid-row: 3/12;
+    }
+
+
+    .main {
+        grid-column: 4/13;
+        grid-row: 3/12;
+    }
+
+    .ads {
+        grid-column: 1/4;
+        grid-row: 12/13;
+    }
+
+    .foot {
+        grid-column: 4/13;
+    }
+}
+
+/* QUESTION 3 */
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid goldenrod;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        /*Setrotationto0degrees*/
+        transform: rotate(0deg);
+    }
+    
+    100% {
+        /*Setrotationto360degrees*/
+        transform: rotate(360deg);
+    }
+}

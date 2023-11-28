@@ -1,0 +1,69 @@
+
+
+/* ALPHA AND OPACITY */
+.one {
+    height: 200px;
+    width: 200px;
+    background-color: rgba(100, 225, 100, 0.5);
+    /* 
+    ALPHA CAN BE USED WITH HEXA VALUE, WHERE LAST TWO DIGIT FROM 8 
+    DIGIT HEXA VALUE IS THE ALPHA
+    */             
+    background-color: #64e164aa;
+    margin: 10px;
+    display: inline-block;
+}
+.two {
+    height: 200px;
+    width: 200px;
+    background-color: rgb(100, 225, 100);
+    opacity: 0.6;
+
+    /* OPACITY EFFECTS THE CONTENT OF CONTAINER TOO UNLIKE ALPHA*/
+
+    margin: 10px;
+    display: inline-block;
+}
+
+
+/* TRANSITION PROPERTY */
+
+.three {
+    height: 200px;
+    width: 200px;
+    background-color: aqua;
+    transition: 1s 0.5s;
+}
+
+.three:hover {
+    background-color: aquamarine;
+    border-radius: 50%;
+}
+
+/* SMILEY FACE */
+
+.face {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background-color: #ffa511;
+}
+
+.l_eye, .r_eye {
+    background-color: black;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+.mouth {
+    background-color: brown;
+    height: 35px;
+    width: 100px;
+    margin-left: 50px;
+    margin-top: 40px;
+    border-radius: 0 0 50px 50px;
+}
