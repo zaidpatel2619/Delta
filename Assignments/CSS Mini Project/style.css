@@ -82,14 +82,14 @@ i {
         position: absolute;
         left: 10px;
         top: 10px;
-        font-size: 28px;
+        font-size: 20px;
         cursor: pointer;
     }
 
     .sidebar_menu .btn_two i {
         display: block;
         color: grey;
-        font-size: 28px;
+        font-size: 20px;
         line-height: 60px;
         position: absolute;
         left: 260px;
@@ -102,6 +102,7 @@ i {
     .sidebar_menu .btn_two i:hover {
         transform: scale(1.1);
         transition: 0.1s ease-in;
+        color: white;
     }
 
     .sidebar_menu {
