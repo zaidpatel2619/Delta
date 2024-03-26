@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main_box {
+    background-image: url("photo.jpg");
+    height: 100vh;
+}
+
+.main_box #check, .btn_one i, .sidebar_menu .btn_two i {
+    display: none;
+}
+
+.sidebar_menu {
+    width: 300px;
+    height: 100vh;
+    box-shadow: 0 0 4px rgba(255, 255, 255, 1);
+    position: absolute;
+    transition: 0.3s linear;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar_menu .logo {
+    height: 70px;
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+}
+
+.sidebar_menu .logo a {
+    width: 100%;
+    line-height: 70px;
+    text-decoration: none;
+    color: white;
+    font-size: 28px;
+    font-weight: 500;
+    position: absolute;
+    left: 20px;
+}
+
+.sidebar_menu .menu {
+    position: absolute;
+    top: 70px;
+    width: 300px;
+}
+
+.sidebar_menu .menu a,
+i {
+    padding-left: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar_menu .menu li {
+    padding: 20px;
+    /* box-shadow: 0 0 4px rgba(255, 255, 255, 0.5); */
+}
+
+.sidebar_menu .menu li:hover {
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.sidebar_menu .social_media {
+    position: absolute;
+    bottom: 20px;
+    left: 70px;
+}
+
+.sidebar_menu .social_media i {
+    font-size: 20px;
+    opacity: 0.7;
+}
+
+.sidebar_menu .social_media i:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+@media (max-width: 720px) {
+    .btn_one i {
+        display: block;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .sidebar_menu .btn_two i {
+        display: block;
+        color: grey;
+        font-size: 20px;
+        line-height: 60px;
+        position: absolute;
+        left: 260px;
+        top: 5px;
+        cursor: pointer;
+    }
+
+
+    .btn_one i:hover,
+    .sidebar_menu .btn_two i:hover {
+        transform: scale(1.1);
+        transition: 0.1s ease-in;
+        color: white;
+    }
+
+    .sidebar_menu {
+        left: -350px;
+    }
+
+    #check:checked~.btn_one {
+        display: none;
+    }
+
+    #check:checked~.sidebar_menu {
+        position: absolute;
+        left: 0;
+    }
+
+}

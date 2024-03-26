@@ -1,0 +1,32 @@
+.card {
+    background-color: rgb(155, 105, 105);
+    padding: 10px;
+    margin: 10px;
+}
+
+.card>div {
+    padding: 10px;
+    font-size: 30px;
+}
+
+.name {
+    font-weight: 600;
+    font-size: 20px;
+    font-style: italic;
+}
+.post {
+    line-height: 2.5;
+    background-color: rgb(218, 186, 186);
+}
+
+button {
+    background-color: brown;
+    padding: 10px;
+    color: white;
+
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}

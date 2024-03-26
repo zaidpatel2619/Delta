@@ -1,0 +1,49 @@
+.heading {
+    text-align: center;
+}
+
+.big-box {
+    display: flex;
+    justify-content: center;
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    border: 5px solid black;
+    border-radius: 20%;
+    display: flex;
+    margin: 1rem;
+}
+
+.pink {
+    background-color: #F2AFEF;
+}
+
+.grey {
+    background-color: #b4b4b4;
+}
+
+.green {
+    background-color: #659e63;
+}
+
+.purple {
+    background-color: #756AB6;
+}
+
+.pink-flash{
+    background-color: #fc02ef;
+}
+
+.grey-flash {
+    background-color: #363636;
+}
+
+.green-flash {
+    background-color: #059100;
+}
+
+.purple-flash {
+    background-color: #1c01b4;
+}
