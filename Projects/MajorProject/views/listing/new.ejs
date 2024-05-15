@@ -4,34 +4,55 @@
         <div class="row mt-3">
             <div class="col-8 offset-2">
                 <h3>Create a new List</h3>
-                <form class="form" method="POST" action="/listings">
-                    <div class="mb-3" >
+                <form class="form needs-validation" novalidate method="POST" action="/listings">
+                    <div class="mb-3">
                         <label for="title" class="form-label">Title</label>
-                        <input type="text" name="listing[title]" placeholder="Enter title" class="form-control">
+                        <input type="text" name="listing[title]" placeholder="Enter title" class="form-control"
+                            required>
+                        <div class="invalid-feedback">Please enter a Title.</div>
+                        <div class="valid-feedback">Looks Good!.</div>
                     </div>
                     <div class="mb-3">
                         <label for="description" class="form-label">Description</label>
-                        <textarea name="listing[description]" class="form-control"></textarea>
+                        <textarea name="listing[description]" class="form-control" required></textarea>
+                        <div class="invalid-feedback">
+                            Please enter description in the textarea.
+                        </div>
+                        <div class="valid-feedback">Looks Good!.</div>
                     </div>
                     <div class="mb-3">
                         <label for="image" class="form-label">Image URL</label>
                         <input type="text" name="listing[image]" placeholder="Enter image url/link"
-                            class="form-control">
+                            class="form-control" value="https://images.unsplash.com/photo-1518684079-3c830dcef090?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZHViYWl8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" required>
                     </div>
                     <div class="row">
                         <div class="mb-3 col-md-4">
                             <label for="price" class="form-label">Price</label>
-                            <input type="number" name="listing[price]" placeholder="Enter price" class="form-control">
+                            <input type="" name="listing[price]" placeholder="Enter price" class="form-control"
+                                required>
+                            <div class="invalid-feedback">
+                                Please enter valid price.
+                            </div>
+                            <div class="valid-feedback">Looks Good!.</div>
                         </div>
                         <div class="mb-3 col-md-8">
                             <label for="location" class="form-label">Location</label>
                             <input type="text" name="listing[location]" placeholder="Enter location"
-                            class="form-control">
+                                class="form-control" required>
+                            <div class="invalid-feedback">
+                                Please enter a location.
+                            </div>
+                            <div class="valid-feedback">Looks Good!.</div>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="country" class="form-label">Country</label>
-                        <input type="text" name="listing[country]" placeholder="Enter country" class="form-control">
+                        <input type="text" name="listing[country]" placeholder="Enter country" class="form-control"
+                            required>
+                        <div class="invalid-feedback">
+                            Please enter a Country.
+                        </div>
+                        <div class="valid-feedback">Looks Good!.</div>
                     </div>
                     <div class="mb-3">
                         <button class="btn btn-dark add-btn">Add New Listing</button>

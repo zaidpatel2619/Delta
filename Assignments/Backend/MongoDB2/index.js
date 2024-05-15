@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const Chat = require('./models/chat');
 const methodOverride = require("method-override");
+const ExpressError = require('./ExpressError');
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -52,6 +53,23 @@ app.post("/chats", (req, res) => {
     res.redirect("/chats");
 });
 
+function asyncWrap(fn) {
+    return function (req, res, next) {
+        fn(req, res, next).catch(err => next(err));
+    };
+} 
+
+//NEW ROUTE TO DEMONSTRATE ASYNCWRAP 
+app.get("/chats/:id", asyncWrap(async (req, res, next) => {
+    let { id } = req.params;
+    let chat = await Chat.findById(id);
+    if (!chat) {
+        next(new ExpressError(500, "Chat not Found!"));
+    }
+    res.render("edit.ejs", { chat });
+}));
+
+
 app.get("/chats/:id/edit", async (req, res) => {
     let { id } = req.params;
     let chat = await Chat.findById(id);
@@ -69,6 +87,19 @@ app.delete("/chats/:id", async (req, res) => {
     let { id } = req.params;
     await Chat.findByIdAndDelete(id).then(res => console.log('Chat deleted!', res)).catch(err => console.log(err));
     res.redirect("/chats");
+});
+
+app.use((err, req, res, next) => {
+    console.log(err.name);
+    console.log(err.message);
+    next(err);
+});
+
+app.use((err, req, res, next) => {
+    let { status, message } = err;
+    console.log("-------ERROR 1-----------");
+    res.status(status).send(message);
+    next(err);
 });
 
 app.listen(8080, () => console.log("server is listening to 8080"));
