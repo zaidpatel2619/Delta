@@ -1,5 +1,5 @@
-const Listing = require("./models/listing");
-const Review = require("./models/review");
+const Listing = require("./models/listingsModel");
+const Review = require("./models/reviewsModel");
 const { listingSchema, reviewSchema } = require("./schema");
 const ExpressError = require("./utils/ExpressError");
 
@@ -52,7 +52,6 @@ module.exports.isOwner = async (req, res, next) => {
 module.exports.isAuthor = async (req, res, next) => {
     let { id, reviewId } = req.params;
     const review = await Review.findById(reviewId);
-    console.log('listing', review);
     if (!review.author._id.equals(req.user._id)) {
         req.flash("error", "Unauthorized user for this review!");
         return res.redirect(`/listings/${id}`);
