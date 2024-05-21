@@ -8,12 +8,8 @@ const listingSchema = new mongoose.Schema({
     },
     description: String, 
     image: {
-        type: Object,
-        default: {
-            filename: 'name',
-            url: "https://unsplash.com/photos/the-eiffel-tower-towering-over-the-city-of-paris-ZgHFNECLmQg",
-        },
-        set: (v) => v === " " ? { url: "https://unsplash.com/photos/the-eiffel-tower-towering-over-the-city-of-paris-ZgHFNECLmQg" } : v,
+        url: String,
+        filename: String
     },
     price: Number,
     location: String,
@@ -25,6 +21,21 @@ const listingSchema = new mongoose.Schema({
     owner: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
+    },
+    geometry: {
+        type: {
+          type: String, // Don't do `{ location: { type: String } }`
+          enum: ['Point'], // 'location.type' must be 'Point'
+          required: true
+        },
+        coordinates: {
+          type: [Number],
+          required: true
+        }
+    },
+    category: {
+        type: String,
+        enum: ["Trending", "Rooms", "Iconic Cities", "Mountains", "Castles", "Amazing Pools", "Camping", "Arctic", "Farms", "Beaches"],
     }
 });
 
